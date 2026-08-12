@@ -9,7 +9,7 @@
 <!-- CONFIG-START - debe coincidir con el CONFIG de tu repo de perfil (username/username) -->
 - FULL_NAME: Bairon Alexander Suarez Camacho
 - GITHUB_USER: BackSua
-- TEAM: The Illusionists - PRJ-OPTIVIEW
+- TEAM: The Illusionists
 - SPRINT_GOAL: Convertir el brief de OptiView en un mapa de contextos acotados para el dominio Pacientes, un product brief para ms-pacientes, un ADR para el estilo arquitectónico de microservicios y un backlog verificable de historias de registro de pacientes y fórmulas ópticas.
 <!-- CONFIG-END -->
 

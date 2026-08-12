@@ -7,7 +7,7 @@
 <!-- CONFIG-START - must match your profile repo (username/username) CONFIG -->
 - FULL_NAME: Bairon Alexander Suarez Camacho
 - GITHUB_USER: BackSua
-- TEAM: The Illusionists - PRJ-OPTIVIEW
+- TEAM: The Illusionists
 - SPRINT_GOAL: Turn the OptiView optical-store brief into a Patients bounded context map, a product brief for ms-pacientes, an ADR for the microservices architectural style, and a testable backlog of patient-registration and optical-formula user stories.
 <!-- CONFIG-END -->
 
