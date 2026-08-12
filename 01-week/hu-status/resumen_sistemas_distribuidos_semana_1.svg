@@ -1,0 +1,214 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050">
+  <defs>
+    <linearGradient id="headerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#123B5D"/>
+      <stop offset="100%" stop-color="#176B87"/>
+    </linearGradient>
+    <linearGradient id="session1Grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EAF4FA"/>
+      <stop offset="100%" stop-color="#F8FBFD"/>
+    </linearGradient>
+    <linearGradient id="session2Grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EAF7F1"/>
+      <stop offset="100%" stop-color="#F8FCFA"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#0F172A" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .title { font: 700 42px Inter, Segoe UI, Arial, sans-serif; fill: #FFFFFF; }
+      .subtitle { font: 400 20px Inter, Segoe UI, Arial, sans-serif; fill: #DDEAF2; }
+      .sectionTitle { font: 700 28px Inter, Segoe UI, Arial, sans-serif; fill: #0F172A; }
+      .sectionSub { font: 600 17px Inter, Segoe UI, Arial, sans-serif; fill: #475569; }
+      .cardTitle { font: 700 19px Inter, Segoe UI, Arial, sans-serif; fill: #0F172A; }
+      .body { font: 400 16px Inter, Segoe UI, Arial, sans-serif; fill: #334155; }
+      .small { font: 400 14px Inter, Segoe UI, Arial, sans-serif; fill: #475569; }
+      .chip { font: 700 14px Inter, Segoe UI, Arial, sans-serif; fill: #0F172A; }
+      .flowTitle { font: 700 17px Inter, Segoe UI, Arial, sans-serif; fill: #FFFFFF; }
+      .footerTitle { font: 700 23px Inter, Segoe UI, Arial, sans-serif; fill: #FFFFFF; }
+      .footerBody { font: 400 16px Inter, Segoe UI, Arial, sans-serif; fill: #DDEAF2; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="1050" fill="#F4F7FA"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1600" height="145" fill="url(#headerGrad)"/>
+  <text x="80" y="62" class="title">Distributed Systems · Week 1</text>
+  <text x="80" y="99" class="subtitle">Models · time · consistency → professional distributed engineering foundations · Term 1</text>
+  <rect x="1332" y="40" width="188" height="58" rx="29" fill="#FFFFFF" fill-opacity="0.14"/>
+  <text x="1426" y="76" text-anchor="middle" style="font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#FFFFFF;">CORHUILA · 2026-B</text>
+
+  <!-- ══════════ SESSION 1 ══════════ -->
+  <rect x="60" y="180" width="720" height="610" rx="24" fill="url(#session1Grad)" stroke="#B9D9EA" stroke-width="2" filter="url(#shadow)"/>
+  <circle cx="108" cy="230" r="25" fill="#176B87"/>
+  <text x="108" y="237" text-anchor="middle" style="font:700 20px Inter,Segoe UI,Arial,sans-serif;fill:#FFFFFF;">1</text>
+  <text x="150" y="224" class="sectionTitle">Session 1 · Distributed Fundamentals</text>
+  <text x="150" y="252" class="sectionSub">State · time · failure all change when you cross the network</text>
+
+  <!-- Failure models -->
+  <text x="95" y="300" class="cardTitle">Failure Models (easy → hard)</text>
+  <rect x="95" y="314" width="655" height="62" rx="12" fill="#FFFFFF" stroke="#C7DDE9"/>
+  <rect x="108" y="326" width="138" height="36" rx="8" fill="#EAF4FA" stroke="#B9D9EA"/>
+  <text x="177" y="349" text-anchor="middle" class="chip">Crash-stop</text>
+  <text x="255" y="349" text-anchor="middle" style="font:700 18px Arial;fill:#94A3B8;">→</text>
+  <rect x="270" y="326" width="148" height="36" rx="8" fill="#EAF4FA" stroke="#B9D9EA"/>
+  <text x="344" y="349" text-anchor="middle" class="chip">Crash-recovery</text>
+  <text x="427" y="349" text-anchor="middle" style="font:700 18px Arial;fill:#94A3B8;">→</text>
+  <rect x="441" y="326" width="110" height="36" rx="8" fill="#EAF4FA" stroke="#B9D9EA"/>
+  <text x="496" y="349" text-anchor="middle" class="chip">Omission</text>
+  <text x="560" y="349" text-anchor="middle" style="font:700 18px Arial;fill:#94A3B8;">→</text>
+  <rect x="572" y="326" width="165" height="36" rx="8" fill="#FFF7E6" stroke="#FCD34D"/>
+  <text x="654" y="349" text-anchor="middle" class="chip">Byzantine ⚠</text>
+
+  <!-- Logical time -->
+  <text x="95" y="420" class="cardTitle">Logical Time — no trusted global clock</text>
+  <rect x="95" y="435" width="307" height="80" rx="12" fill="#FFFFFF" stroke="#C7DDE9"/>
+  <text x="115" y="462" class="chip">Lamport Clock</text>
+  <text x="115" y="481" class="body">Total order consistent with causality.</text>
+  <text x="115" y="499" class="small">L(a) &lt; L(b) does NOT prove a → b</text>
+  <rect x="416" y="435" width="334" height="80" rx="12" fill="#FFFFFF" stroke="#C7DDE9"/>
+  <text x="436" y="462" class="chip">Vector Clock</text>
+  <text x="436" y="481" class="body">Real causal proof: V(a) &lt; V(b) → a caused b.</text>
+  <text x="436" y="499" class="small">More cost, more precision. Use for causality.</text>
+
+  <!-- Consistency spectrum -->
+  <text x="95" y="558" class="cardTitle">Consistency Spectrum</text>
+  <rect x="95" y="572" width="655" height="58" rx="12" fill="#FFFFFF" stroke="#C7DDE9"/>
+  <rect x="108" y="584" width="148" height="34" rx="8" fill="#176B87"/>
+  <text x="182" y="606" text-anchor="middle" style="font:700 13px Inter,sans-serif;fill:#FFF;">Linearizable</text>
+  <rect x="264" y="584" width="120" height="34" rx="8" fill="#2A8FA8"/>
+  <text x="324" y="606" text-anchor="middle" style="font:700 13px Inter,sans-serif;fill:#FFF;">Sequential</text>
+  <rect x="392" y="584" width="100" height="34" rx="8" fill="#47B4C8"/>
+  <text x="442" y="606" text-anchor="middle" style="font:700 13px Inter,sans-serif;fill:#FFF;">Causal</text>
+  <rect x="500" y="584" width="237" height="34" rx="8" fill="#7DD3E0"/>
+  <text x="618" y="606" text-anchor="middle" style="font:700 13px Inter,sans-serif;fill:#0F172A;">Eventual ← more scale</text>
+
+  <!-- CAP + Delivery -->
+  <rect x="95" y="652" width="307" height="118" rx="12" fill="#FFFFFF" stroke="#C7DDE9"/>
+  <text x="115" y="676" class="chip">CAP / PACELC</text>
+  <text x="115" y="696" class="body">Partition → choose C or A.</text>
+  <text x="115" y="714" class="body">Else → Latency vs Consistency.</text>
+  <text x="115" y="734" class="small">Quorum: R + W &gt; N → read sees</text>
+  <text x="115" y="752" class="small">the latest write.</text>
+  <rect x="416" y="652" width="334" height="118" rx="12" fill="#FFFFFF" stroke="#C7DDE9"/>
+  <text x="436" y="676" class="chip">Delivery Semantics</text>
+  <text x="436" y="696" class="body">At-most-once: may lose.</text>
+  <text x="436" y="714" class="body">At-least-once: may duplicate.</text>
+  <text x="436" y="734" class="small">→ consumer must be idempotent.</text>
+  <text x="436" y="752" class="small">Exactly-once = at-least-once + dedup key.</text>
+
+  <!-- ══════════ SESSION 2 ══════════ -->
+  <rect x="820" y="180" width="720" height="610" rx="24" fill="url(#session2Grad)" stroke="#A7D8BE" stroke-width="2" filter="url(#shadow)"/>
+  <circle cx="868" cy="230" r="25" fill="#1A7A4A"/>
+  <text x="868" y="237" text-anchor="middle" style="font:700 20px Inter,Segoe UI,Arial,sans-serif;fill:#FFFFFF;">2</text>
+  <text x="910" y="224" class="sectionTitle">Session 2 · Professional Engineering</text>
+  <text x="910" y="252" class="sectionSub">Turn fundamentals into maintainable, deliverable code</text>
+
+  <!-- DDD -->
+  <text x="855" y="300" class="cardTitle">Domain-Driven Design (DDD)</text>
+  <rect x="855" y="314" width="655" height="78" rx="12" fill="#FFFFFF" stroke="#A7D8BE"/>
+  <rect x="868" y="326" width="140" height="54" rx="8" fill="#EAF7F1" stroke="#A7D8BE"/>
+  <text x="938" y="349" text-anchor="middle" class="chip">Bounded Context</text>
+  <text x="938" y="368" text-anchor="middle" class="small">= microservice boundary</text>
+  <rect x="1018" y="326" width="130" height="54" rx="8" fill="#EAF7F1" stroke="#A7D8BE"/>
+  <text x="1083" y="349" text-anchor="middle" class="chip">Aggregate Root</text>
+  <text x="1083" y="368" text-anchor="middle" class="small">only mutation point</text>
+  <rect x="1158" y="326" width="130" height="54" rx="8" fill="#EAF7F1" stroke="#A7D8BE"/>
+  <text x="1223" y="349" text-anchor="middle" class="chip">Value Object</text>
+  <text x="1223" y="368" text-anchor="middle" class="small">immutable, by value</text>
+  <rect x="1298" y="326" width="200" height="54" rx="8" fill="#EAF7F1" stroke="#A7D8BE"/>
+  <text x="1398" y="349" text-anchor="middle" class="chip">Domain Event</text>
+  <text x="1398" y="368" text-anchor="middle" class="small">past tense · immutable</text>
+
+  <!-- Hexagonal -->
+  <text x="855" y="438" class="cardTitle">Hexagonal Architecture (Ports &amp; Adapters)</text>
+  <rect x="855" y="452" width="655" height="72" rx="12" fill="#FFFFFF" stroke="#A7D8BE"/>
+  <rect x="868" y="463" width="148" height="50" rx="8" fill="#D1FAE5" stroke="#A7D8BE"/>
+  <text x="942" y="484" text-anchor="middle" class="chip">IN Adapter</text>
+  <text x="942" y="502" text-anchor="middle" class="small">REST · CLI · Queue</text>
+  <text x="1027" y="491" text-anchor="middle" style="font:700 20px Arial;fill:#1A7A4A;">→</text>
+  <rect x="1042" y="463" width="220" height="50" rx="8" fill="#1A7A4A"/>
+  <text x="1152" y="484" text-anchor="middle" style="font:700 14px Inter,sans-serif;fill:#FFF;">Domain + Use-Cases</text>
+  <text x="1152" y="502" text-anchor="middle" style="font:400 13px Inter,sans-serif;fill:#A7F3D0;">no I/O imports allowed</text>
+  <text x="1273" y="491" text-anchor="middle" style="font:700 20px Arial;fill:#1A7A4A;">→</text>
+  <rect x="1288" y="463" width="210" height="50" rx="8" fill="#D1FAE5" stroke="#A7D8BE"/>
+  <text x="1393" y="484" text-anchor="middle" class="chip">OUT Adapter</text>
+  <text x="1393" y="502" text-anchor="middle" class="small">JPA · RabbitMQ · Redis</text>
+
+  <!-- Resilience patterns -->
+  <text x="855" y="566" class="cardTitle">Resilience Patterns</text>
+  <rect x="855" y="580" width="310" height="90" rx="12" fill="#FFFFFF" stroke="#A7D8BE"/>
+  <text x="875" y="604" class="chip">Circuit Breaker · Retry + Jitter</text>
+  <text x="875" y="622" class="body">Isolate failures. No retry storms.</text>
+  <text x="875" y="640" class="chip">Saga + compensations</text>
+  <text x="875" y="658" class="body">Consistency without distributed TX.</text>
+  <rect x="1175" y="580" width="335" height="90" rx="12" fill="#FFFFFF" stroke="#A7D8BE"/>
+  <text x="1195" y="604" class="chip">Outbox Pattern</text>
+  <text x="1195" y="622" class="body">Atomic DB commit + event. No lost events.</text>
+  <text x="1195" y="640" class="chip">CQRS</text>
+  <text x="1195" y="658" class="body">Write model ≠ Read model (projections).</text>
+
+  <!-- Git flow -->
+  <text x="855" y="712" class="cardTitle">Ways of Working · Git Flow · ADRs</text>
+  <rect x="855" y="726" width="655" height="50" rx="12" fill="#FFFFFF" stroke="#A7D8BE"/>
+  <rect x="870" y="737" width="155" height="28" rx="7" fill="#1A7A4A"/>
+  <text x="947" y="756" text-anchor="middle" style="font:700 13px Inter,sans-serif;fill:#FFF;">hu-xxx-dev → develop</text>
+  <text x="1033" y="756" text-anchor="middle" style="font:700 16px Arial;fill:#94A3B8;">→</text>
+  <rect x="1048" y="737" width="140" height="28" rx="7" fill="#2A8FA8"/>
+  <text x="1118" y="756" text-anchor="middle" style="font:700 13px Inter,sans-serif;fill:#FFF;">hu-xxx-qa → qa</text>
+  <text x="1196" y="756" text-anchor="middle" style="font:700 16px Arial;fill:#94A3B8;">→</text>
+  <rect x="1210" y="737" width="155" height="28" rx="7" fill="#176B87"/>
+  <text x="1287" y="756" text-anchor="middle" style="font:700 13px Inter,sans-serif;fill:#FFF;">hu-xxx-main → main</text>
+  <text x="1378" y="742" class="small">Individual deliverable:</text>
+  <text x="1378" y="760" class="small">NN-week/hu-status/README.md</text>
+
+  <!-- Anti-pattern -->
+  <rect x="60" y="800" width="1480" height="52" rx="12" fill="#FFF7E6" stroke="#FCD34D"/>
+  <text x="85" y="822" class="chip">⚠ Critical anti-pattern:</text>
+  <text x="85" y="840" class="small">Domain that imports ORM · Controller that runs SQL · Services with shared DB + joint deploy = distributed monolith, not microservices.</text>
+
+  <!-- ══════════ FLOW BAR ══════════ -->
+  <rect x="60" y="864" width="1480" height="112" rx="20" fill="#123B5D" filter="url(#shadow)"/>
+  <text x="800" y="894" text-anchor="middle" style="font:700 20px Inter,Segoe UI,Arial,sans-serif;fill:#FFFFFF;">Integrated Summary of both sessions</text>
+
+  <rect x="78" y="906" width="186" height="52" rx="10" fill="#176B87"/>
+  <text x="171" y="929" text-anchor="middle" class="flowTitle">Cross the Network</text>
+  <text x="171" y="948" text-anchor="middle" style="font:400 13px Inter,sans-serif;fill:#A7F3D0;">8 fallacies · failure models</text>
+  <polygon points="264,932 281,921 281,943" fill="#7DD3E0"/>
+
+  <rect x="288" y="906" width="186" height="52" rx="10" fill="#176B87"/>
+  <text x="381" y="929" text-anchor="middle" class="flowTitle">Time &amp; Consistency</text>
+  <text x="381" y="948" text-anchor="middle" style="font:400 13px Inter,sans-serif;fill:#A7F3D0;">Lamport · CAP · quorums</text>
+  <polygon points="474,932 491,921 491,943" fill="#7DD3E0"/>
+
+  <rect x="498" y="906" width="186" height="52" rx="10" fill="#176B87"/>
+  <text x="591" y="929" text-anchor="middle" class="flowTitle">Delivery Semantics</text>
+  <text x="591" y="948" text-anchor="middle" style="font:400 13px Inter,sans-serif;fill:#A7F3D0;">at-least-once + idempotency</text>
+  <polygon points="684,932 701,921 701,943" fill="#A7D8BE"/>
+
+  <rect x="708" y="906" width="186" height="52" rx="10" fill="#1A7A4A"/>
+  <text x="801" y="929" text-anchor="middle" class="flowTitle">DDD + Hexagonal</text>
+  <text x="801" y="948" text-anchor="middle" style="font:400 13px Inter,sans-serif;fill:#A7F3D0;">bounded contexts · ports</text>
+  <polygon points="894,932 911,921 911,943" fill="#A7D8BE"/>
+
+  <rect x="918" y="906" width="186" height="52" rx="10" fill="#1A7A4A"/>
+  <text x="1011" y="929" text-anchor="middle" class="flowTitle">Patterns</text>
+  <text x="1011" y="948" text-anchor="middle" style="font:400 13px Inter,sans-serif;fill:#A7F3D0;">Saga · Outbox · CB · CQRS</text>
+  <polygon points="1104,932 1121,921 1121,943" fill="#A7D8BE"/>
+
+  <rect x="1128" y="906" width="186" height="52" rx="10" fill="#1A7A4A"/>
+  <text x="1221" y="929" text-anchor="middle" class="flowTitle">ADR + Backlog</text>
+  <text x="1221" y="948" text-anchor="middle" style="font:400 13px Inter,sans-serif;fill:#A7F3D0;">documented decisions · HUs</text>
+  <polygon points="1314,932 1331,921 1331,943" fill="#A7D8BE"/>
+
+  <rect x="1338" y="906" width="188" height="52" rx="10" fill="#FFFFFF"/>
+  <text x="1432" y="929" text-anchor="middle" style="font:700 16px Inter,sans-serif;fill:#1A7A4A;">MVP 1</text>
+  <text x="1432" y="948" text-anchor="middle" style="font:400 13px Inter,sans-serif;fill:#176B87;">deliverable</text>
+
+  <!-- Footer -->
+  <text x="80" y="1018" class="footerTitle">Key principle: the foundations are non-negotiable.</text>
+  <text x="80" y="1040" class="footerBody">DDD · hexagonal · SOLID · TDD · CI/CD are the floor, not an option. "MVP" reduces scope, never standards.</text>
+  <text x="1520" y="1032" text-anchor="end" style="font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#7DD3E0;">Source: OVA CORHUILA · Week 1 · Sessions 1–2</text>
+</svg>
