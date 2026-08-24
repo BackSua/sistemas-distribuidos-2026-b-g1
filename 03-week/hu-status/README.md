@@ -8,24 +8,27 @@
 - FULL_NAME: Bairon Alexander Suarez Camacho
 - GITHUB_USER: BackSua
 - TEAM: The Illusionists
-- SPRINT_GOAL: Fork the `code-corhuila/opti-docs` governance framework into `BackSua/opti-docs`, configure it with `upstream` tracking, and adapt the entire `00-governance/` section (branch strategy, agile ceremonies, DoR/DoD, documentation rules, per-microservice docs standard, security policy and rules) to OptiView's real stack, backlog and academic cadence.
+- SPRINT_GOAL: Clone the team's shared documentation repository `code-corhuila/opti-docs` (single source of truth, direct-to-`main` — no work branches or PRs for docs, per the course's stated workflow) and adapt the entire `00-governance/` section (branch strategy, agile ceremonies, DoR/DoD, documentation rules, per-microservice docs standard, security policy and rules) to OptiView's real stack, backlog and academic cadence.
 
 ## 1. User stories worked this week
 
 | HU ID | Title | Status (todo/doing/done) | Evidence (PR or commit URL) |
 |---|---|---|---|
-| HU-OPT-005 | Fork `code-corhuila/opti-docs` and configure `origin`/`upstream` | done | https://github.com/BackSua/opti-docs |
-| HU-OPT-006 | Adapt `00-governance/git-conventions.md`, `agile-conventions.md`, `definition-of-done.md`, `definition-of-ready.md` and `README.md` to OptiView | done | https://github.com/BackSua/opti-docs/commit/543451a |
-| HU-OPT-007 | Adapt `00-governance/documentation-rules.md`, `microservices-documentation.md`, `security-policy.md`, `security-rules.md` to OptiView | doing | Adapted locally, pending push by a teammate under their own account (see section 3) |
+| HU-OPT-005 | Clone `code-corhuila/opti-docs` and verify local write access to `main` | done | https://github.com/code-corhuila/opti-docs |
+| HU-OPT-006 | Adapt `00-governance/git-conventions.md`, `agile-conventions.md`, `definition-of-done.md`, `definition-of-ready.md` and `README.md` to OptiView and push directly to `main` | done | https://github.com/code-corhuila/opti-docs/commit/e71bf15 |
+| HU-OPT-007 | Adapt `00-governance/documentation-rules.md`, `microservices-documentation.md`, `security-policy.md`, `security-rules.md` to OptiView | doing | Adapted locally, pending push by a teammate under their own account directly to `main` (see section 3) |
 
 ## 2. My individual contribution
 
-- **Forked** [`code-corhuila/opti-docs`](https://github.com/code-corhuila/opti-docs) — the generic
-  Microservices Governance Framework used as the documentation scaffold for the course — into
-  [`BackSua/opti-docs`](https://github.com/BackSua/opti-docs), then cloned it locally and
-  configured `origin` (my fork) and `upstream` (`code-corhuila/opti-docs`) so the relationship
-  with the original template is preserved and future framework updates can still be pulled in
-  without losing OptiView-specific work.
+- Initially forked [`code-corhuila/opti-docs`](https://github.com/code-corhuila/opti-docs) into
+  a personal fork, but corrected course after re-checking the team's actual instructions: for
+  this repo, `code-corhuila/opti-docs` **is itself** OptiView's shared documentation repo (not a
+  generic template to fork per student), teammates (`ariel5253`) had already pushed
+  project-specific commits directly to its `main` (domain docs, product docs), and the stated
+  rule is "single source of truth, everything goes straight to `main`, no work branches or PRs
+  here — those apply to the code repos, not this one." Re-pointed the local clone's `upstream`
+  remote at `code-corhuila/opti-docs`, verified push access with a dry run, and rebased my local
+  governance commit on top of the teammates' newer commits before pushing directly to `main`.
 - Read the framework itself before touching any document: the root `README.md`
   ("How to use this framework"), `00-sdd-guide.md` (SDD methodology and weekly fill-in order),
   and the `00-governance/README.md` index, confirming `00-governance` wraps and applies to every
@@ -61,20 +64,27 @@
   explicit `⚠️ Pendiente de definición por el equipo` instead of inventing an answer.
 - Split the 8 adapted `00-governance` files with a teammate for authorship purposes: I pushed
   `README.md`, `git-conventions.md`, `agile-conventions.md`, `definition-of-done.md` and
-  `definition-of-ready.md` under my own commit; `documentation-rules.md`,
-  `microservices-documentation.md`, `security-policy.md` and `security-rules.md` were adapted
-  and handed off for a teammate to push under theirs.
+  `definition-of-ready.md` directly to `code-corhuila/opti-docs` `main` under my own commit;
+  `documentation-rules.md`, `microservices-documentation.md`, `security-policy.md` and
+  `security-rules.md` were adapted and handed off for a teammate to push under theirs, to the
+  same repo.
 
 ## 3. Blockers and risks
 
 - `documentation-rules.md`, `microservices-documentation.md`, `security-policy.md` and
   `security-rules.md` are fully adapted but intentionally **not yet pushed** to
-  `BackSua/opti-docs` — they are being handed to a teammate to commit under their own GitHub
-  account so individual authorship is preserved across the team. HU-OPT-007 stays `doing` until
-  that push lands.
+  `code-corhuila/opti-docs` — they are being handed to a teammate to commit under their own
+  GitHub account so individual authorship is preserved across the team. HU-OPT-007 stays `doing`
+  until that push lands.
+- Almost pushed the adapted governance docs to a personal fork instead of the shared
+  `code-corhuila/opti-docs` repo — caught before it caused a real divergence, but it cost a
+  rebase to reconcile with two teammates' commits that had landed on `main` in the meantime.
+  Worth re-reading the course's per-repo workflow rules before assuming "fork it" applies
+  everywhere; it does for the code repos, not for this shared docs repo.
 - The GitHub CLI (`gh`) is not installed in the working environment and no GitHub token was
-  configured, so the fork itself had to be created interactively through the browser (logged in
-  via Chrome) rather than scripted — worth automating with `gh` before the next fork-heavy week.
+  configured, so write access to `code-corhuila/opti-docs` had to be verified interactively
+  (browser login, then a `git push --dry-run`) rather than scripted — worth automating with `gh`
+  before the next docs-heavy week.
 - Several governance decisions are explicitly still open and marked `⚠️ Pendiente de definición
   por el equipo` rather than guessed: who holds the Tech Lead/PO role, the GitHub Projects board
   URL, the team chat channel, and the secrets-management tool for anything beyond local
@@ -110,10 +120,9 @@ Notes on unchecked items:
 
 ## 6. Evidence links
 
-- Fork with upstream configured: https://github.com/BackSua/opti-docs
-- Original framework (upstream): https://github.com/code-corhuila/opti-docs
-- Commit — adapted git/agile/DoD/DoR governance docs: https://github.com/BackSua/opti-docs/commit/543451a
+- Shared team documentation repo: https://github.com/code-corhuila/opti-docs
+- Commit — adapted git/agile/DoD/DoR governance docs, pushed directly to `main`: https://github.com/code-corhuila/opti-docs/commit/e71bf15
 - OptiView user stories source (HU-01 to HU-12): `02-week/hu-status/README.md` and `C:\Users\bairo\Downloads\OptiView_Historias_Usuario.md`
-- Screenshot evidence of the pushed commit on GitHub:
+- Screenshot evidence of the earlier pushed commit on GitHub (fork stage, before re-pointing to `code-corhuila/opti-docs`):
 
-![OptiView opti-docs governance commit evidence — commit 543451a on BackSua/opti-docs, 5 files changed (README.md, agile-conventions.md, definition-of-done.md, definition-of-ready.md, git-conventions.md)](./opti-docs-governance-commit-evidence.png)
+![OptiView opti-docs governance commit evidence — 5 files changed (README.md, agile-conventions.md, definition-of-done.md, definition-of-ready.md, git-conventions.md), later re-pushed directly to code-corhuila/opti-docs main as commit e71bf15](./opti-docs-governance-commit-evidence.png)
