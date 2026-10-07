@@ -14,10 +14,17 @@
 ## 1. User stories worked this week
 | HU ID | Title | Status (todo/doing/done) | Evidence (PR or commit URL) |
 |---|---|---|---|
-| N/A | Documentation audit of `opti-docs` against the course Project Tracker (stack consistency, English-only docs, service/repository mapping, deployment and data-dictionary docs) | done | [`opti-docs` PR #19](https://github.com/code-corhuila/opti-docs/pull/19) |
+| N/A | Docker Compose composition and service wiring for the whole stack (`opti-infra`), with topology/startup docs | done | [`opti-infra@7d767cd`](https://github.com/code-corhuila/opti-infra/commit/7d767cddd), [`opti-infra@5d8963d`](https://github.com/code-corhuila/opti-infra/commit/5d8963d4b) |
+| N/A | Customer management screens in the customers portal | done | [`opti-customers-portal@d152212`](https://github.com/code-corhuila/opti-customers-portal/commit/d15221216) |
+| N/A | Catalog and inventory screens in the products portal | done | [`opti-products-portal@f31536b`](https://github.com/code-corhuila/opti-products-portal/commit/f31536b1f) |
+| N/A | Hexagonal products API (domain, application, REST adapters) plus CI build/test workflow | done | [`opti-products-api@ebc58b7`](https://github.com/code-corhuila/opti-products-api/commit/ebc58b7), [`opti-products-api@c4728ec`](https://github.com/code-corhuila/opti-products-api/commit/c4728ec) |
+| N/A | Documentation audit of `opti-docs` against the course Project Tracker (stack consistency, English-only docs, deployment and data-dictionary docs) | done | [`opti-docs` PR #19](https://github.com/code-corhuila/opti-docs/pull/19) |
 
 ## 2. My individual contribution
 
+- Built and wired the delivery side of the product: the Docker Compose composition for all
+  services in `opti-infra`, the customers and products portal screens, and the build/test CI
+  workflows with PR templates and env samples across the repos (customers, products).
 - Studied the Week 9 material: 12-Factor configuration, secret stores and rotation, startup
   configuration validation, feature flags, and progressive delivery (canary, blue-green,
   monitor-and-rollback). Summaries and infographics are in this folder.
