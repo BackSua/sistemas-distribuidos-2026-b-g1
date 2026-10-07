@@ -14,10 +14,10 @@
 ## 1. User stories worked this week
 | HU ID | Title | Status (todo/doing/done) | Evidence (PR or commit URL) |
 |---|---|---|---|
-| N/A | Docker Compose composition and service wiring for the whole stack (`opti-infra`), with topology/startup docs | done | [`opti-infra@7d767cd`](https://github.com/code-corhuila/opti-infra/commit/7d767cddd), [`opti-infra@5d8963d`](https://github.com/code-corhuila/opti-infra/commit/5d8963d4b) |
-| N/A | Customer management screens in the customers portal | done | [`opti-customers-portal@d152212`](https://github.com/code-corhuila/opti-customers-portal/commit/d15221216) |
-| N/A | Catalog and inventory screens in the products portal | done | [`opti-products-portal@f31536b`](https://github.com/code-corhuila/opti-products-portal/commit/f31536b1f) |
-| N/A | Hexagonal products API (domain, application, REST adapters) plus CI build/test workflow | done | [`opti-products-api@ebc58b7`](https://github.com/code-corhuila/opti-products-api/commit/ebc58b7), [`opti-products-api@c4728ec`](https://github.com/code-corhuila/opti-products-api/commit/c4728ec) |
+| N/A | Docker Compose composition and service wiring for the whole stack (`opti-infra`), with topology/startup docs | done | [`opti-infra@7d767cd`](https://github.com/code-corhuila/opti-infra/commit/a99859de5e708dcece496e38c4a5655f51338104), [`opti-infra@5d8963d`](https://github.com/code-corhuila/opti-infra/commit/6e5b76f991971bd51195167f490c24f331ae708b) |
+| HU-01 / HU-03 | Customer management screens in the customers portal | done | [`opti-customers-portal@d152212`](https://github.com/code-corhuila/opti-customers-portal/commit/4d93c6f00b0f0d30fc0b14f810960f5de5369883) |
+| HU-05 / HU-06 | Catalog and inventory screens in the products portal | done | [`opti-products-portal@f31536b`](https://github.com/code-corhuila/opti-products-portal/commit/84cbaa7aaf158ba65f9634e561ec6eaab99d38cf) |
+| N/A | Hexagonal products API (domain, application, REST adapters) plus CI build/test workflow | done | [`opti-products-api@ebc58b7`](https://github.com/code-corhuila/opti-products-api/commit/a5338a6998dee2dcba959cb3bf961162082210eb2da7a4b530cb41b467876c8f0f280de1f), [`opti-products-api@c4728ec`](https://github.com/code-corhuila/opti-products-api/commit/cd9f003c908dfd3f4d4d93d6717c06ed4a6106304614d5d17b0bbdb0422262e6091d11d7d) |
 | N/A | Documentation audit of `opti-docs` against the course Project Tracker (stack consistency, English-only docs, deployment and data-dictionary docs) | done | [`opti-docs` PR #19](https://github.com/code-corhuila/opti-docs/pull/19) |
 
 ## 2. My individual contribution
@@ -42,8 +42,7 @@
 
 ## 3. Blockers and risks
 
-- PR #19 needs 1 approval from the course reviewer (CODEOWNERS) before it can merge to `main`; it
-  is open and awaiting review.
+- PR #19 has been merged. Further backlog registration is delivered through a separate documentation PR.
 - No rollout strategy or secret-store technology is decided yet for OptiView; both are recorded as
   pending team decisions rather than invented.
 - `05-release/optiview-platform-v1.0.0/` holds real monolith code inside the docs repository; where
@@ -51,7 +50,7 @@
 
 ## 4. Plan for next week
 
-- Get PR #19 reviewed and merged, and confirm the teammate's `07-api` PR is opened separately.
+- Validate the new retrospective HU registration and its acceptance scenarios with the team.
 - Decide and document the rollout strategy and where secrets will live (ADR candidates).
 - Move on to the persistence topics (Saga, Outbox, CQRS) in Week 10.
 
@@ -76,3 +75,6 @@ Notes on unchecked items:
 - Infographic: ![Configuration, Secrets and Feature Flags](./configuration-secrets-feature-flags-infographic.jpeg)
 - Infographic: ![Secure Config and Progressive Delivery](./secure-config-progressive-delivery-infographic.jpeg)
 - Documentation audit PR: [`opti-docs` PR #19](https://github.com/code-corhuila/opti-docs/pull/19)
+
+- Imported archive checksums: [import-manifest.md](./import-manifest.md).
+- The portal rows map to existing HUs; screen implementation alone does not prove every original acceptance criterion. Compose/CI and documentation audit are technical work, not newly invented business stories.
