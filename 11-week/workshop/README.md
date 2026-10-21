@@ -8,7 +8,7 @@ project, made observable end to end.
 - GITHUB_USER: BackSua
 - TEAM: The Illusionists
 - DOCS_REPO: https://github.com/code-corhuila/opti-docs
-- REFLECTION_DOC: (pending: link of the "W11 Reflection - Bairon Alexander Suarez Camacho" Google Doc)
+- REFLECTION_DOC: https://docs.google.com/document/d/1fe9Ukmpc1wv11txT-ylOU1DVqmySCSdVWHW3wXSnSLc/edit
 - JOURNEY: Place an order (saga place-order) - see 01-journey.md
 <!-- CONFIG-END -->
 
