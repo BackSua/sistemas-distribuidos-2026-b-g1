@@ -1,0 +1,54 @@
+# Burn-rate alerts for SLO 1 (availability 99.5 % over 30 days) of POST /api/v1/sagas/place-order.
+# Error budget = 0.5 % = 0.005. Thresholds: 14.4 x 0.005 = 0.072 and 6 x 0.005 = 0.03.
+# Metrics come from 04-metrics.md (workflow_requests_total). See 05-slo.md and 06-alert-policy.md.
+groups:
+  - name: place-order-slo-recording
+    rules:
+      - record: slo:place_order_error_ratio:rate5m
+        expr: |
+          sum(rate(workflow_requests_total{route="/api/v1/sagas/place-order",outcome="error"}[5m]))
+          / sum(rate(workflow_requests_total{route="/api/v1/sagas/place-order"}[5m]))
+      - record: slo:place_order_error_ratio:rate30m
+        expr: |
+          sum(rate(workflow_requests_total{route="/api/v1/sagas/place-order",outcome="error"}[30m]))
+          / sum(rate(workflow_requests_total{route="/api/v1/sagas/place-order"}[30m]))
+      - record: slo:place_order_error_ratio:rate1h
+        expr: |
+          sum(rate(workflow_requests_total{route="/api/v1/sagas/place-order",outcome="error"}[1h]))
+          / sum(rate(workflow_requests_total{route="/api/v1/sagas/place-order"}[1h]))
+      - record: slo:place_order_error_ratio:rate6h
+        expr: |
+          sum(rate(workflow_requests_total{route="/api/v1/sagas/place-order",outcome="error"}[6h]))
+          / sum(rate(workflow_requests_total{route="/api/v1/sagas/place-order"}[6h]))
+
+  - name: place-order-slo-alerts
+    rules:
+      - alert: PlaceOrderFastBurn
+        expr: |
+          slo:place_order_error_ratio:rate1h > (14.4 * 0.005)
+          and slo:place_order_error_ratio:rate5m > (14.4 * 0.005)
+          and sum(increase(workflow_requests_total{route="/api/v1/sagas/place-order"}[1h])) >= 3
+        for: 2m
+        labels:
+          severity: page
+          team: the-illusionists
+          service: opti-workflow
+        annotations:
+          summary: "place-order is burning the 30-day error budget 14.4 times too fast"
+          description: "Server errors in the last hour are above 7.2 % of place-order requests, and still above it in the last 5 minutes."
+          runbook_url: "https://github.com/BackSua/sistemas-distribuidos-2026-b-g1/blob/main/11-week/workshop/07-runbook.md"
+
+      - alert: PlaceOrderSlowBurn
+        expr: |
+          slo:place_order_error_ratio:rate6h > (6 * 0.005)
+          and slo:place_order_error_ratio:rate30m > (6 * 0.005)
+          and sum(increase(workflow_requests_total{route="/api/v1/sagas/place-order"}[6h])) >= 10
+        for: 15m
+        labels:
+          severity: ticket
+          team: the-illusionists
+          service: opti-workflow
+        annotations:
+          summary: "place-order is burning the 30-day error budget 6 times too fast"
+          description: "Server errors in the last 6 hours are above 3 % of place-order requests, and still above it in the last 30 minutes."
+          runbook_url: "https://github.com/BackSua/sistemas-distribuidos-2026-b-g1/blob/main/11-week/workshop/07-runbook.md"
