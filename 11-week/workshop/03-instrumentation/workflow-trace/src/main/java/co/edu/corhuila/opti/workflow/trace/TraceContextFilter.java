@@ -20,9 +20,11 @@ public final class TraceContextFilter extends Filter {
     private static final Pattern SAFE_ID = Pattern.compile("^[A-Za-z0-9._-]{1,64}$");
 
     private final StructuredLogger log;
+    private final Metrics metrics;
 
-    public TraceContextFilter(StructuredLogger log) {
+    public TraceContextFilter(StructuredLogger log, Metrics metrics) {
         this.log = log;
+        this.metrics = metrics;
     }
 
     @Override
@@ -40,8 +42,10 @@ public final class TraceContextFilter extends Filter {
         try {
             chain.doFilter(exchange);
         } finally {
+            long nanos = System.nanoTime() - started;
+            metrics.record(exchange.getHttpContext().getPath(), exchange.getResponseCode(), nanos / 1e9);
             Map<String, Object> fields = new LinkedHashMap<>();
-            fields.put("duration_ms", (System.nanoTime() - started) / 1_000_000);
+            fields.put("duration_ms", nanos / 1_000_000);
             fields.put("status", exchange.getResponseCode());
             log.info("http.request.completed", exchange.getRequestMethod() + " " + exchange.getHttpContext().getPath(),
                     fields);
