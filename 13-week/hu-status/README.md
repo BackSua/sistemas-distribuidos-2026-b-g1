@@ -14,6 +14,12 @@
 ## 1. User stories worked this week
 | HU ID | Title | Status (todo/doing/done) | Evidence (PR or commit URL) |
 |---|---|---|---|
+| N/A | W13 workshop: workshop start and boundary claim (CP0) | done | [b986354](https://github.com/BackSua/sistemas-distribuidos-2026-b-g1/commit/b986354b8adb1ed2c03021ada8093ad270ea21cb), [issue 30](https://github.com/code-corhuila/opti-docs/issues/30) |
+| N/A | W13 workshop: attack surface map and trust boundaries (CP1) | done | [74c3c60](https://github.com/BackSua/sistemas-distribuidos-2026-b-g1/commit/74c3c60e7dc1cee2b254ff550058c95a862de503) |
+| N/A | W13 workshop: STRIDE of opti-api-gateway to opti-products-api (CP2) | doing | [PR 31](https://github.com/code-corhuila/opti-docs/pull/31), [library record](https://github.com/BackSua/sistemas-distribuidos-2026-b-g1/commit/1abf7992f45b92c4be05e5db339d64bb8714291b) |
+| N/A | W13 workshop: security backlog, three stories (CP3) | done | [issue 38](https://github.com/code-corhuila/opti-docs/issues/38), [issue 39](https://github.com/code-corhuila/opti-docs/issues/39), [issue 40](https://github.com/code-corhuila/opti-docs/issues/40), [31a3da5](https://github.com/BackSua/sistemas-distribuidos-2026-b-g1/commit/31a3da5c2077729fc26cb0e4c66bdfbf93ac81f9) |
+| N/A | W13 workshop: security gates and negative authorization test (CP4) | done | [9fd708d](https://github.com/BackSua/sistemas-distribuidos-2026-b-g1/commit/9fd708db6ec61a82ac234847e8ee67cdaf689ed3), [03e6b7b](https://github.com/BackSua/sistemas-distribuidos-2026-b-g1/commit/03e6b7b69b2d797bbc7eb53adf2fe8cb16e9e7d3) |
+| N/A | W13 workshop: peer review of a teammate's STRIDE (CP5) | done | [review on PR 32](https://github.com/code-corhuila/opti-docs/pull/32#pullrequestreview-5691551540) |
 | N/A | Study deliverables: authN, authZ and zero trust; threat modeling and the security backlog | done | See section 6 |
 | N/A | Corte 3 certification (Huawei HCCDP-Solution Architectures): base structure synced into the fork, course not started yet | todo | [`certification/`](../certification/README.md) |
 
@@ -32,12 +38,22 @@
   folder, to avoid importing other students' work) and read the certification guide and the
   week 13 slides.
 
+- Workshop on threat modeling (delivery 1): claimed the boundary `opti-api-gateway` to
+  `opti-products-api`, drew the attack surface with five trust boundaries, wrote the STRIDE table in
+  a pull request of the team docs repository, opened three security stories (issues 38 to 40) with
+  labels `security` and `P0`/`P1`, wrote a security workflow and a negative authorization test that
+  runs the real `RequestRules.requireRole` rule of `opti-products-api`, and reviewed a teammate's
+  STRIDE. The library book is Tanenbaum and Van Steen (2008), call number 005.4476 T15d, record at
+  19:36; the reflection document is linked in `13-week/workshop/README.md`.
+
 ## 3. Blockers and risks
 
 - The certification needs the teacher's class invitation, expected by 2026-10-28; the course
   (56 hours) must be completed with real evidence before 2026-11-15, so the study hours have to
   start this week.
-- Security work for OptiView (threat model, backlog) is not written yet.
+- The three security issues have to be added to the team GitHub Project board by hand, because the
+  token I use from the command line cannot write to Projects.
+- The STRIDE pull request stays open for a teammate to review; I do not merge it myself.
 
 ## 4. Plan for next week
 
