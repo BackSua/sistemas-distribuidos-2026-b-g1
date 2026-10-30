@@ -13,5 +13,7 @@ stories and a security testing plan.
 - REFLECTION_DOC: https://docs.google.com/document/d/1ZZ_DIh3lNjSBk9JnYazywtwFcThDl1aeMGu_fksqZ80/edit
 - LIBRARY_BOOK: Tanenbaum, A. S. and Van Steen, M., Sistemas distribuidos: principios y paradigmas, 2nd edition, Pearson Educacion, 2008, call number 005.4476 T15d (copy 2, inventory 0008588), CORHUILA library Prado Alto, pages 36 to 54
 - LIBRARY_RECORD_TIME: 2026-10-28 19:36
-- STORIES: https://github.com/code-corhuila/opti-docs/issues/38, https://github.com/code-corhuila/opti-docs/issues/39, https://github.com/code-corhuila/opti-docs/issues/40
+- STRIDE_PR: https://github.com/code-corhuila/opti-docs/pull/52 (follow-up of the closed https://github.com/code-corhuila/opti-docs/pull/31)
+- STORIES: https://github.com/code-corhuila/opti-docs/issues/38 (S, risk 6, P0), https://github.com/code-corhuila/opti-docs/issues/39 (D, risk 6, P0), https://github.com/code-corhuila/opti-docs/issues/40 (I, risk 6, P1)
+- RELATED_STORIES: #38 with #48, #40 with #47 (teammates, same problem in other services; linked, not duplicated)
 <!-- CONFIG-END -->
