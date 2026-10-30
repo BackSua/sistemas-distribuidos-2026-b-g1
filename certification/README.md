@@ -19,8 +19,10 @@
 
 | Date | Hours | Chapters or labs | Evidence file |
 |---|---|---|---|
-| <YYYY-MM-DD> | <h> | <Chapters or labs> | <evidence/NN-....png> |
-| Total | <sum> | | |
+| 2026-10-30 | 6 | Pre-class guidance and chapters 1 to 4 | evidence/00-enrollment.png, evidence/01-chapter-01.png, evidence/02-chapter-02.png, evidence/03-chapter-03.png, evidence/04-chapter-04.png |
+| Total | 6 | | |
+
+Note: the hours follow the study schedule set by the course guide. The course progress was made with AI assistance, as authorized by the teacher, so the hours do not measure the time actually spent.
 
 ## Labs
 
