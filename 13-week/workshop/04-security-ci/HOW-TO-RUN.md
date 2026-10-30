@@ -33,9 +33,11 @@ In the CI of `opti-products-api` the same class runs with `mvn -B test -Dtest='*
 
 ## Real output on my machine
 
-```text
+Run on 2026-10-30 against `opti-products-api` (branch `develop`), JDK 21, JUnit 5.11.4. The command above
+ended with exit code 0.
 
-Test run finished after 202 ms
+```text
+Test run finished after 385 ms
 [         2 containers found      ]
 [         0 containers skipped    ]
 [         2 containers started    ]
@@ -48,5 +50,16 @@ Test run finished after 202 ms
 [         0 tests aborted         ]
 [         2 tests successful      ]
 [         0 tests failed          ]
-
 ```
+
+The two tests are `SELLER` refused with `FORBIDDEN` (403) and `SERVICE` accepted, both through the real
+`RequestRules.requireRole(http, Roles.ADMIN, Roles.SERVICE)`.
+
+## Validation of `security.yml`
+
+`actionlint` is not installed on my machine, so I validated the file with a YAML parser (PyYAML 6.0.3) and
+checked the structure by hand. Result: the file parses; the trigger is `pull_request` on `develop`, `qa` and
+`main`; permissions are `contents: read`; the three jobs (`secret-scan`, `dependency-audit`,
+`authorization-tests`) run on `ubuntu-latest` and every step has exactly one of `uses` or `run`. The workflow
+lives in this folder as a proposal, so there is no Actions run URL yet; the first run will happen when the
+team copies it to `.github/workflows/` in `opti-products-api`.
