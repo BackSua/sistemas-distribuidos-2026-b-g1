@@ -1,19 +1,18 @@
-# Certification C3 — <Full name>
+# Certification C3 — Bairon Alexander Suarez Camacho
 
-> Template of the corte 3 certification. Replace every `<...>` with your data and delete this note. The rules are in the guide attached to the c3-certification activity in Moodle. Text left as `<...>` counts as missing.
 
 ## Cover
 
 | Field | Value |
 |---|---|
-| Full name | <Full name exactly as in Moodle> |
-| GitHub user | <github-user> |
-| Group | <G1 or G2> |
-| Team | <Team name> |
-| Team -docs repository | <https://github.com/code-corhuila/...-docs> |
-| Course | <Exact course name> |
-| Course link | <Course URL> |
-| Start date | <YYYY-MM-DD> |
+| Full name | Bairon Alexander Suarez Camacho |
+| GitHub user | BackSua |
+| Group | G1 |
+| Team | The Illusionists |
+| Team -docs repository | https://github.com/code-corhuila/opti-docs |
+| Course | HCCDP-Solution Architectures Course |
+| Course link | https://e.huawei.com/en/talent/ict-academy/#/ictcourses-detail?courseId=6WtKiPd1S1YelBB0AUbE1vXlPgk |
+| Start date | 2026-10-30 |
 | Completion date | <YYYY-MM-DD> |
 
 ## Study log
