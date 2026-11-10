@@ -20,7 +20,8 @@
 | Date | Hours | Chapters or labs | Evidence file |
 |---|---|---|---|
 | 2026-10-30 | 6 | Pre-class guidance and chapters 1 to 4 | evidence/00-enrollment.png, evidence/01-chapter-01.png, evidence/02-chapter-02.png, evidence/03-chapter-03.png, evidence/04-chapter-04.png |
-| Total | 6 | | |
+| 2026-11-10 | 6 | Chapters 5 to 11 | evidence/05-chapter-05.png, evidence/06-chapter-06.png, evidence/07-chapter-07.png, evidence/08-chapter-08.png, evidence/09-chapter-09.png, evidence/10-chapter-10.png, evidence/11-chapter-11.png |
+| Total | 12 | | |
 
 Note: the hours follow the study schedule set by the course guide. The course progress was made with AI assistance, as authorized by the teacher, so the hours do not measure the time actually spent.
 
